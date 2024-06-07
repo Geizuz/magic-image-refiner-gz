@@ -217,4 +217,14 @@ class Predictor(BasePredictor):
             output_path = f"/tmp/out-{i}.png"
             sample.save(output_path)
             output_paths.append(Path(output_path))
+        
+        # Attempt at cleanup to prevent memory leaks
+        del generator
+        del final_image
+        del control_image
+        del loaded_image
+        del outputs
+        if (mask):
+            del mask_image
+        torch.cuda.empty_cache()
         return output_paths
