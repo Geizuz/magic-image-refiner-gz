@@ -78,6 +78,12 @@ class Predictor(BasePredictor):
             model = self.ESRGAN_models[2]
             img = model.predict(img)
         return img
+
+    def esrgan_only_predict(self, input_image):
+        img = input_image.convert("RGB")
+        model = self.ESRGAN_models[2]
+        img = model.predict(img)
+        return img
     
     def calculate_brightness_factors(self, hdr_intensity):
         factors = [1.0] * 9
