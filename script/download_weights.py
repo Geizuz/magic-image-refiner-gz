@@ -1,8 +1,13 @@
 from diffusers import ControlNetModel, DiffusionPipeline, AutoencoderKL, AutoPipelineForInpainting
 import torch
 from RealESRGAN import RealESRGAN
+#------
+import os
 
-
+# Check if 'weights' directory exists, and create it if not
+if not os.path.exists("weights"):
+    os.makedirs("weights")
+#------
 for scale in [2, 4]:
     model = RealESRGAN("cuda", scale=scale)
     model.load_weights(f"weights/RealESRGAN_x{scale}.pth", download=True)
