@@ -16,6 +16,6 @@ build:
     - "pillow==10.1.0"
 
   run:
-    - pip install git+https://github.com/sberbank-ai/Real-ESRGAN.git
+    - pip install git+https://github.com/Geizuz/Real-ESRGAN.git
 
 predict: "predict.py:Predictor"
