@@ -11,7 +11,7 @@ if not os.path.exists("weights"):
 for scale in [2, 4]:
     model = RealESRGAN("cuda", scale=scale)
     model.load_weights(f"weights/RealESRGAN_x{scale}.pth", download=True)
-print('load step finished')
+print("load step finished")
 SD15_WEIGHTS = "weights"
 INPAINT_WEIGHTS = "inpaint-cache"
 CONTROLNET_CACHE = "controlnet-cache"
