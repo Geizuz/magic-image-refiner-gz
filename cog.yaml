@@ -7,7 +7,7 @@ build:
   python_packages:
     - "diffusers==0.24.0"
     - "huggingface-hub<=0.25"
-    - "torch==2.0.1"
+    - "torch==2.2.0"
     - "opencv-contrib-python-headless==4.8.1.78"
     - "controlnet-aux==0.0.7"
     - "transformers==4.35.2"
@@ -15,6 +15,7 @@ build:
     - "accelerate==0.25.0"
     - "triton==2.0.0"
     - "pillow==10.1.0"
+    - "numpy==1.26.0"
 
   run:
     - pip install git+https://github.com/Geizuz/Real-ESRGAN.git
